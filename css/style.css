@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+#carousel {
+	margin-top: 100px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#images {
+	width: 800px;
+	height: 450px;
+	overflow: hidden;
+}
+
+#images ul {
+	width: 4000px;
+	list-style-type: none;
+	padding: 0;
+}
+
+#images ul li {
+	float: left;
+	width: 800px;
+	height: 450px;
+}
+
+#images img {
+	width: 100%;
+	height: auto;
+}
