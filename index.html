@@ -8,17 +8,31 @@
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
-		<div id="carousel">
+
+		<div class="container">
 			<h1>Simple jQuery Carousel</h1>
-			<div id="images">
-				<ul>
-					<li><img src="http://arekrybka.com/bootcamp/jQuery-carousel/image1.jpeg" alt="Riders"></li>
-					<li><img src="http://arekrybka.com/bootcamp/jQuery-carousel/image2.jpeg" alt="Riders"></li>
-					<li><img src="http://arekrybka.com/bootcamp/jQuery-carousel/image3.jpeg" alt="Riders"></li>
-					<li><img src="http://arekrybka.com/bootcamp/jQuery-carousel/image4.jpeg" alt="Rider"></li>
-					<li><img src="http://arekrybka.com/bootcamp/jQuery-carousel/image5.jpg" alt="Rider"></li>
-				</ul>
-			</div>	
+			<div id="carousel">
+				<div class="buttons">
+					<a href="#" class="prev"><i class="fa fa-chevron-left"></i></a>
+					<a href="#" class="next"><i class="fa fa-chevron-right"></i></a>
+				</div>
+				<div class="controls">
+					<i class="fa fa-circle"></i>
+					<i class="fa fa-circle-o"></i>
+					<i class="fa fa-circle-o"></i>
+					<i class="fa fa-circle-o"></i>
+					<i class="fa fa-circle-o"></i>
+				</div>
+				<div id="images">
+					<ul>
+						<li><img src="http://placehold.it/800x450/000/?text=Image+1" alt="Image 1"></li>
+						<li><img src="http://placehold.it/800x450/111/?text=Image+2" alt="Image 2"></li>
+						<li><img src="http://placehold.it/800x450/222/?text=Image+3" alt="Image 3"></li>
+						<li><img src="http://placehold.it/800x450/333/?text=Image+4" alt="Image 4"></li>
+						<li><img src="http://placehold.it/800x450/444/?text=Image+5" alt="Image 5"></li>
+					</ul>
+				</div>
+			</div>
 		</div>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
