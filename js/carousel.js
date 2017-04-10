@@ -1,54 +1,51 @@
-$(function(){
+$(function() {
 	
 	var carouselList = $("#images ul");
 
 	setInterval(slideNext, 3000);
 
+	function getFirstItem() {
+		return carouselList.find('li:first');
+	}
+
+	function getLastItem() {
+		return carouselList.find('li:last');
+	}
+
 	function moveFirstSlide () {
-		var firstItem = carouselList.find("li:first");
-		var lastItem = carouselList.find("li:last");
-		lastItem.after(firstItem);
+		getLastItem().after(getFirstItem());
 		carouselList.css({marginLeft:0});
 	};
 
 	function moveLastSlide () {
-		var firstItem = carouselList.find("li:first");
-		var lastItem = carouselList.find("li:last");
-		firstItem.before(lastItem);
+		getFirstItem().before(getLastItem());
 		carouselList.css({marginLeft:-800});
 	};
 
 	function slideNext() {
 		carouselList.animate({'marginLeft':-800}, 500, moveFirstSlide);
-		moveNextIndicator();
+		moveIndicator(true);
 	};
 
 	function slidePrev() {
 		moveLastSlide();
 		carouselList.animate({'marginLeft':0}, 500);
-		movePrevIndicator();
+		moveIndicator(false);
 	};
 
-	function moveNextIndicator() {
-		var active = $('.controls .fa-circle');
-		var next = active.next();
+	function moveIndicator(direction) {
 
-		if (next.length == 0) {
-			next = $('.controls i').first();
+		deleteClass();
+
+		var active = $('.controls .fa-circle');
+		var way = direction ? active.next() : active.prev();
+		var which = direction ? 'first' : 'last';
+
+		if (way.length == 0) {
+			way = $('.controls i')[which]();
 		}
 
-		next.addClass('fa-circle').removeClass('fa-circle-o');
-		active.removeClass('fa-circle').addClass('fa-circle-o');
-	};
-
-	function movePrevIndicator() {
-		var active = $('.controls .fa-circle');
-		var prev = active.prev();
-
-		if (prev.length == 0) {
-			prev = $('.controls i').last();
-		}
-		prev.addClass('fa-circle').removeClass('fa-circle-o');
+		way.addClass('fa-circle').removeClass('fa-circle-o');
 		active.removeClass('fa-circle').addClass('fa-circle-o');
 	};
 
