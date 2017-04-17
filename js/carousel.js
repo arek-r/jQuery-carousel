@@ -34,21 +34,16 @@ $(function() {
 	};
 
 	function moveIndicator(direction) {
-
-		deleteClass();
-
 		var active = $('.controls .fa-circle');
 		var way = direction ? active.next() : active.prev();
 		var which = direction ? 'first' : 'last';
-
 		if (way.length == 0) {
 			way = $('.controls i')[which]();
 		}
-
 		way.addClass('fa-circle').removeClass('fa-circle-o');
 		active.removeClass('fa-circle').addClass('fa-circle-o');
 	};
-
+	
 	$(".next").on('click', slideNext);
 	$(".prev").on('click', slidePrev);
 
