@@ -3,7 +3,7 @@
 	box-sizing: border-box;
 }
 
-#carousel {
+.container {
 	margin-top: 100px;
 	position: relative;
 	display: flex;
@@ -32,4 +32,50 @@
 #images img {
 	width: 100%;
 	height: auto;
+}
+
+/*Buttons*/
+.buttons {
+	width: 800px;
+	height: 450px;
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+}
+
+.buttons a {
+	text-decoration: none;
+}
+
+.buttons i {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background: #333;
+	color: #fff;
+	font-size: 24px;
+	opacity: 0.8;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+/*Controls*/
+.controls {
+	width: 800px;
+	height: 50px;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 0;
+	color: #fff;
+}
+
+.controls i {
+	padding: 5px;
+	cursor: pointer;
 }
